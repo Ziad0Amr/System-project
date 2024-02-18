@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>system project</title>
+</head>
+<body>
+    <div class="header contanier text-center">
+        <h1 class="title text-uppercase mt-3">cruds</h1>
+        <p class="text-uppercase fs-5">product management system</p>
+    </div>
+    <div class="inputs contanier">
+        <form class="form" action="">
+            <input type="text" placeholder="Title" id="title">
+            <div class="price">
+                <input onkeyup="gettotal()" type="number" placeholder="Price" id="price">
+                <input onkeyup="gettotal()" type="number" placeholder="Taxes" id="taxes">
+                <input onkeyup="gettotal()" type="number" placeholder="Ads" id="ads">
+                <input onkeyup="gettotal()" type="number" placeholder="Discount" id="discount">
+                <small class="total"></small>
+            </div>
+            <input type="number" placeholder="Count" id="count">
+            <input type="text" placeholder="Category" id="category">
+            <button id="submit">Create</button>
+        </form>
+    </div>
+    <div class="outputs contanier">
+        <input onkeyup="searchprocess(this.value)" type="text" placeholder="Search" id="search">
+        <div class="buttons">
+            <button onclick="searchtype(this.id)" id="searchbytitle">Search By Title</button>
+            <button onclick="searchtype(this.id)" id="searchbycategory">Search By Category</button>
+        </div>
+        <div id="deleteall">
+            <button onclick="deleteall()">Delete All <span id="sp"></span></button>
+        </div>
+        <table >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>PRICE</th>
+                    <th>TAXES</th>
+                    <th>ADS</th>
+                    <th>DISCOUNT</th>
+                    <th>TOTAL</th>
+                    <th>CATEGORY</th>
+                    <th>UPDATE</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
